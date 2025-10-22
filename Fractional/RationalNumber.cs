@@ -41,16 +41,17 @@ namespace Fractional
         public bool Equals(RationalNumber? other)
         {
             if (other == null) return false;
-            if (other.numerator / denominator == 1) return true;
-            if (other.numerator / denominator == -1) return true;
+            if (other.numerator == numerator && other.denominator == denominator) return true;
             else return false;
         }
         public int CompareTo(RationalNumber? other)
         {
             if (other == null) return 0;
-            if (other.numerator > denominator) return -1;
-            if (other.numerator < denominator) return 1;
-            else return 0;
+            var left = ((double)numerator)/denominator;
+            var right = ((double)other.numerator)/other.denominator;
+            if (left > right) return 1;
+            if (left < right) return -1;
+            return 0;
         }
     }
 }
