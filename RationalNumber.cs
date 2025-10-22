@@ -1,8 +1,5 @@
-﻿public class RationalNumber
+﻿public class RationalNumber : IEquatable<RationalNumber> , IComparable<RationalNumber>
 {
-    IEquatable<RationalNumber>
-    IComparable<RationalNumber>
-
     public bool Equals(RationalNumber? other)
     {
         throw new NotImplementedException();
@@ -12,5 +9,4 @@
     {
         throw new NotImplementedException();
     }
-
 }
